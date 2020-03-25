@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+head
+  meta(charset='utf-8')
+  title #{pageTitle}
+  link(rel='stylesheet', href='/css/bootstrap.css')
+body  
+  .container.mt-4
+    .row
+      .col-12
+        header
+          nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            ul.navbar-nav
+              li.nav-item
+                a.nav-link(href='/') Shop
+              li.nav-item
+                a.nav-link(href='/add-product') Add Product
+        
+        main.mt-4
+          .container
+            .row
+              .col-12
+                form(action='/admin/add-product', method='post')
+                  .form-group
+                    input.form-control(type='text', name='title')
+                  .form-group
+                    button.btn.btn-primary(type='submit', name='button') Add Product 
+                 

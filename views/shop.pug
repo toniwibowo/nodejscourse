@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+html(lang="en")
+  head 
+    meta(charset='utf-8')
+    title #{doctTitle}
+    link(rel='stylesheet', href='/css/bootstrap.css')
+  body      
+    .container.mt-4
+      .row
+        .col-12
+          header
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light
+              ul.navbar-nav
+                li.nav-item
+                  a.nav-link(href="/") Shop
+                li.nav-item
+                  a.nav-link(href="/admin/add-product") Add Product 
+          main.mt-4
+            if prods.length > 0
+              h1.mb-4 My Product
+              .row
+                each product in prods
+                  .col-lg-4 
+                    .card
+                      img.img-fluid(src="images/games-2.png", alt="games")
+                      .card-body.p-4
+                        h4
+                          a(href="#") #{product.title}
+                        .btn-action
+                          a.btn.btn-primary(href="#") Buy  
+            else
+              h1 Product Not Found
